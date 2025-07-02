@@ -38,3 +38,19 @@ def pattern3(num):
         print('')
     
 print(pattern3(5))
+
+
+def pattern4(num):
+    for x in range(1,num*2):
+        if x>num:
+            print(' '*(x-num), end='')
+            for y in range(1,(num-(x-num))+1):
+               print(y,end="  ")
+            print('')
+        else:
+         print(' '*(num-x), end='')
+         for y in range(1,x+1):
+            print(y,end="  ")
+         print('')
+        
+pattern4(5)
