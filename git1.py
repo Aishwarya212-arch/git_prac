@@ -29,4 +29,12 @@ def pattern2(final_letter):
              if l==j:
                 print(seen[j])
              print(seen[l],end='  ')
-      
+
+def pattern3(num):
+    for i in range(1,num+1):
+        print(' '*(num-i),end='')
+        for j in range(num,num-i,-1):
+            print(j, end='  ')
+        print('')
+    
+print(pattern3(5))
