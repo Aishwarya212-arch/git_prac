@@ -54,3 +54,72 @@ def pattern4(num):
          print('')
         
 pattern4(5)
+
+
+from collections import deque
+def pattern5(letter):
+    alphabet={chr(i):i-64 for i in range(65,91)}
+    target=alphabet[letter]
+    seen=deque()
+    for x in alphabet.keys():
+        if x==letter:
+            seen.appendleft(x)
+            break
+        else:
+          seen.appendleft(x)
+    
+    print(seen)
+    for y in range(1,len(seen)+1):
+
+        for z in range(y):
+            print(seen[y-1],end='')
+        print('')
+    
+    for j in range(len(seen)-2,-1,-1):
+        for k in range(j+1):
+            print(seen[j],end='')
+        print('')
+
+    
+
+pattern5('E')
+
+
+
+
+
+from collections import deque
+def pattern6(num):
+    num_builder=deque()
+    
+    for i in range((num*2)-1):
+        num_string=''
+        print(' '*(num-i),end='')
+        if i==0:
+            num_builder.append(num)
+            num_string +=''.join(str(x) for x in num_builder)
+            print(num_string)
+            print('')
+        elif i>num-1:
+            print(' '*(num_builder[1]),end='')
+            num_builder.pop()
+            num_builder.popleft()
+            num_string +=''.join(str(x) for x in num_builder)
+            print(num_string)
+            print('')
+
+
+        else:
+             num_builder.appendleft(num-i)
+             num_builder.append(num-i)
+             num_string +=''.join(str(x) for x in num_builder)
+             print(num_string)
+             print('')
+
+    
+    
+    
+   
+    
+
+pattern6(5)
